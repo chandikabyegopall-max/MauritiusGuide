@@ -1,0 +1,30 @@
+<?php
+session_start();
+include 'includes/db_connect.php';
+?>
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign In Form</title>
+    <link rel="stylesheet" href="formstyle2.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Mauritius Travel Guide</h1>
+
+        <div class="container">
+            <form action="signInForm.php" method="POST"> 
+                <h2>Access Restricted</h2>
+                <p>You must be signed in to access this page.</p>
+                <button type="submit" class="btn">Go to Sign In</button>
+            </form>
+        </div>    
+    </div>
+</body> 
+</html>
