@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Mauritius Guide</title>
+    <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" href="FeedbackForm.css"/>
+    <!-- Boxicons CSS -->
+<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+<link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Mauritius Guide</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="contact.html">Contact</a></li>      
+      </ul>
+    </nav>
+
+
+    <div class="mode-toggle">
+      <span id= "mode-text">Switch to Dark Mode </span> 
+      <img id="mode-switch" src="images/darkmode.png" alt="Toggle Mode">
+    </div>
+    
+    <section class="section contact-section" id="contact-us">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Send us your queries.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    
+    <div class="wrapper">
+        <h3>Rate our website</h3>
+        <form action="#">
+
+            <div class="customerdetails">
+                <label for="emailaddress"> Email Address</label>
+                <input name="emailaddress" placeholder="Enter your email address" autofocus required type="email" />
+            </div>
+            <div class="customerdetails">
+                <label for="firstname"> First Name</label>
+                <input name="firstname" placeholder="Enter your first name" autofocus required type="firstname" />
+            </div>
+            <div class="customerdetails">
+                <label for="lastname"> Last Name</label>
+                <input name="lastname" placeholder="Enter your last name" autofocus required type="lastname" />
+            </div>
+
+            <div class="rating">
+                <input type="number" name="rating" hidden>
+                <i class='bx  bx-star'></i> 
+                <i class='bx  bx-star'></i>
+                <i class='bx  bx-star'></i>
+                <i class='bx  bx-star'></i>
+                <i class='bx  bx-star'></i>
+            </div>
+            
+            <div class="feedback">
+                <label for="opinion"> Your Opinion</label>
+                <textarea name="opinion"  cols="30"  rows="5" placeholder="Share your experience..."></textarea>
+            </div>
+
+            <div class= "btn-group">
+                <button type= "submit button"  class="btn-submit"> Submit </button>
+                <button type= "cancel button"  class="btn-cancel"> Cancel </button>
+            </div>
+
+        </form>
+    </div>
+    
+    <script src="FeedbackForm.js"></script>
+    <script src="darkmode.js"></script>
+  </body>
+</html>
+
