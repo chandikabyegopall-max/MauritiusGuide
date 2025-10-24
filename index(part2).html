@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mauritius Travel Guide</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="imageslider.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Mauritius Guide</div>   
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="contact.html">Contact</a></li>     
+      </ul>
+    </nav>
+    
+    <div class="mode-toggle">
+      <span id= "mode-text">Switch to Dark Mode </span> 
+      <img id="mode-switch" src="images/darkmode.png" alt="Toggle Mode">
+    </div>
+    
+    
+
+    <!-- Home Section with Beach Background -->
+    <header class="home-header">
+      <div class="overlay">
+        <h1>Welcome to Mauritius Travel Guide</h1>
+        <p>
+          Explore the island’s most beautiful beaches, top attractions, hotels,
+          and local experiences.
+        </p>
+      </div>
+    </header>
+
+
+    <div class="slider-main">
+    <h2 class="slider-title">Explore Some Popular Destinations</h2>
+    <p class="slider-description">These are popular places in Mauritius. To know other destinations, refer to the navigation bar.</p>
+
+    <div class="slidecontainer">
+      <button class="arrow left">&#10094;</button>
+      <div class="card-wrapper"></div>
+      <ul class="card-list">
+        <li class="card-item active">
+          <img src="https://mauritiusattractions.com/content/images/nma-image/guide/336/le-morne-brabant-symbol-of-freedom.jpg" alt="Le Morne Brabant" class="card-image">
+          <p class="badge le-morne">Le Morne Brabant</p>
+          <p class="card-title">Located in the south of Mauritius, known for its historical importance and scenic beauty.</p>
+        </li>
+        <li class="card-item">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/47/38/76/presenting-you-our-new.jpg?w=1200&h=1200&s=1" alt="Casela Nature Parks" class="card-image">
+          <p class="badge casela">Casela Nature Parks</p>
+          <p class="card-title">A nature and leisure park offering safari tours, zip lining, quad biking, and animal encounters.</p>
+        </li>
+        <li class="card-item">
+          <img src="https://lemandalamoris.com/wp-content/uploads/2024/03/plage-de-mont-choisy-3A-un-tresor-mauricien-a-explorer-1024x683.jpg" alt="Mont Choisy Beach" class="card-image">
+          <p class="badge mont-choisy">Mont Choisy Beach</p>
+          <p class="card-title">A calm public beach ideal for swimming, snorkeling, and other water sports.</p>
+        </li>
+        <li class="card-item">
+          <img src="https://mauritiusattractions.com/content/images/gallery/1627/Chamarel%207%20Coloured%20Earth%20(1).jpg" alt="Chamarel 7 Coloured Earths" class="card-image">
+          <p class="badge chamarel-earths">Chamarel Geopark</p>
+          <p class="card-title">A natural wonder with seven distinct colored sands in the Black River District.</p>
+        </li>
+      </ul>
+      <button class="arrow right">&#10095;</button>
+    </div>
+  </div>
+
+
+    <script src="darkmode.js"></script>
+    <script src="imageslider.js"></script>
+  </body>
+</html>
