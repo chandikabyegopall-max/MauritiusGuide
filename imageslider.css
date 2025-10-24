@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #C8DFEF, #90BDDE);
+}
+
+body.dark{
+    background: black;
+}
+
+.slider-main {
+  background-color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+body.dark .slider-main {
+  background-color: black;
+}
+
+.slider-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+body.dark .slider-title{
+    color: white;
+}
+
+.slider-description {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+body.dark .slider-description {
+    color: white;
+}
+
+.slidecontainer {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  /* gap between iamge and arrow*/
+  gap: 4px;
+  overflow: visible;
+}
+
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-item {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-item.active {
+  display: flex;
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio:1.5/1;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.le-morne { background: #247F2C; }
+.casela { background: #A5812C; }
+.mont-choisy { background: #09AEC8; }
+.chamarel-earths { background: #C84C09; }
+
+.card-title {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #333;
+  padding: 0 20px;
+}
+
+body.dark .card-title{
+    color:white;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: none;
+  border: 5px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 3em;
+  color: rgb(108, 119, 218);
+  z-index: 1;
+}
+
+.arrow.left {
+  left: -50px; /* Pushes it outside the image container */
+}
+
+.arrow.right {
+  right: -50px;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
