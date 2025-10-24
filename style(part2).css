@@ -1,0 +1,378 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+body.dark .navbar {
+  color: black;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0077b6;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 1000;
+}
+
+body.dark .navbar .nav-links a {
+  color: black;
+} 
+
+.navbar .logo {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+.mode-toggle {
+  font-weight: bold;
+  align-items: right;
+  justify-content: flex-start;
+  position:relative;
+  display: flex;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 70px;
+}
+
+.mode-toggle img{
+  width: 30px;
+  height: 30px;
+  font-size: 0.1rem; 
+  cursor: pointer;
+  
+}
+
+.mode-toggle .mode-text{
+  font: 8px solid black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* Home */
+.home-header {
+  background: url('images/bg.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+body.dark .overlay {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+} 
+
+/* Sections */
+.section {
+  margin-top: 100px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: transform 0.2s;
+}
+
+.body.dark  .card {
+  background: white;
+  color: black; 
+}
+
+body.dark  .card h3 {
+  color: black;
+}
+
+body.dark  .card p {
+  color: black;
+}
+
+
+#modeLabel {
+  font-size: 5px;
+  color: #333;
+}
+
+.welcome-banner {
+  background-color: #ccc;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .welcome-banner {
+  background-color: #494545ab;
+}
+
+body.dark #modeLabel {
+  color: #f0f0f0;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  padding: 0 10px 10px;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.contact-form button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #005f8a;
+}
+
+/* Home page background */
+.home-header {
+  background: url('images/Beaches-Mauritius.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+  color: white;
+  text-align: center;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+/* Wishlist UI */
+.wishlist-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #30B5FD;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 1200;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  font-weight: 700;
+}
+
+.wishlist-sidebar {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 320px;
+  max-width: 92vw;
+  height: calc(100% - 96px);
+  background: #fff;
+  box-shadow: -8px 0 30px rgba(0,0,0,0.12);
+  padding: 12px;
+  overflow-y: auto;
+  z-index: 1199;
+  border-left: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wishlist-sidebar.hidden { display: none; }
+
+.wishlist-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+
+.wishlist-header h3 { margin:0; font-size:1.05rem; }
+
+.close-wishlist {
+  background:#f0f0f0;
+  border:1px solid #ddd;
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+#wishlistItems { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+
+#wishlistItems li {
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding-bottom:8px;
+  border-bottom:1px solid #f2f2f2;
+}
+
+#wishlistItems img { width:84px; height:64px; object-fit:cover; border-radius:6px; }
+
+.wishlist-item-meta { flex:1; }
+.wishlist-item-meta h4 { margin:0 0 6px 0; font-size:14px; }
+.wishlist-item-meta p { margin:0; font-size:12px; color:#666; }
+
+.remove-btn {
+  background:#f44336;
+  color:#fff;
+  border:none;
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+/* empty state */
+.wishlist-empty { color:#666; font-size:14px; padding:8px 0; }
+
+/* Responsive tweaks */
+@media (max-width:640px) {
+  .wishlist-toggle { bottom:14px; right:14px; padding:8px 10px; }
+  .wishlist-sidebar {
+    top:64px;
+    width:100%;
+    height: calc(100% - 64px);
+    border-left: none;
+  }
+}
+
+/* Force filter bar to the upper-left of the page (not centered) */
+.filter-bar {
+  width: 100%;
+  margin: 0;               /* remove auto-centering */
+  padding: 12px 18px;
+  background: #fff;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+body.dark .filter-bar {
+  background: white;
+  border-bottom: black;
+
+}
+
+.filter-row {
+  display: flex;
+  align-items: left;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* left align controls */
+  margin: 0;                    /* ensure row itself is not centered */
+}
+
+/* If your page has a content container and you want the controls flush to its left edge,
+   wrap .filter-bar inside that container or use an explicit left offset instead of centering. */
+.page-container .filter-bar,
+.content .filter-bar {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+/* Keep tag filters horizontal and allow scrolling when too many */
+.tag-filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 45vw;
+}
+
+/* Responsive: stack vertically but keep left alignment */
+@media (max-width: 760px) {
+  .filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+  #searchInput { width: 100%; }
+  #sortSelect { width: 100%; }
+  .tag-filters { max-width: 100%; width: 100%; overflow-x: visible; display:flex; flex-wrap:wrap; }
+}
