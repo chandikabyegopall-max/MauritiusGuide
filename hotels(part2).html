@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotels - Mauritius Guide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Mauritius Guide</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="contact.html">Contact</a></li><li><a href="activities.html">Activities</a></li>
+            
+      </ul>
+    </nav>
+
+    <div class="mode-toggle">
+      <span id= "mode-text">Switch to Dark Mode </span> 
+      <img id="mode-switch" src="images/darkmode.png" alt="Toggle Mode">
+    </div>
+    
+    <section class="section">
+      <h2>Top Hotels</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="images/Lux-bellemare.jpg" alt="Lux Belle Mare" />
+          <h3>Lux Belle Mare</h3>
+          <p>Luxury beach resort with world-class dining and ocean views.</p>
+           <button class="wishlist-btn">♡ Add to Wishlist</button>
+          <p> </p>
+          </div>
+        <div class="card">
+          <img src="images/Saint-geran.jpg" alt="One&Only Le Saint Géran" />
+          <h3>One&Only Le Saint Géran</h3>
+          <p>
+            An iconic 5-star resort offering private beaches and fine
+            hospitality.
+          </p>
+            <button class="wishlist-btn">♡ Add to Wishlist</button>
+          <p> </p>
+          </div>
+        <div class="card">
+          <img src="images/westin-turtle.jpg" alt="The Westin Turtle Bay" />
+          <h3>The Westin Turtle Bay</h3>
+          <p>Elegant rooms, spa treatments, and views of Turtle Bay.</p>
+          <button class="wishlist-btn">♡ Add to Wishlist</button>
+          <p> </p>
+          </div>
+      </div>
+    </section>
+    <!-- WISHLIST UI (ADD: keep all existing content) -->
+   <div id="wishlistToggle" class="wishlist-toggle" title="Open Wishlist">💙 Wishlist</div>
+
+   <aside id="wishlistSidebar" class="wishlist-sidebar hidden" aria-hidden="true">
+      <header class="wishlist-header">
+         <h3>Your Wishlist</h3>
+         <button id="closeWishlist" class="close-wishlist" aria-label="Close wishlist">Close</button>
+     </header>
+     <ul id="wishlistItems"></ul>
+     <div id="wishlistEmpty" class="wishlist-empty">Your wishlist is empty.</div>
+   </aside>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="attractions-ajax.js"></script>
+    <script src="wishlist.js"></script>
+    <script src="app-wishlist.js"></script>
+
+    <script src="darkmode.js"></script>
+  </body>
+</html>
