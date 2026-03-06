@@ -1,7 +1,4 @@
-<?php
-session_start();
-include 'includes/db_connect.php';
-?>
+
 <?php
 // Database configuration
 $host = 'localhost';         // or your server name
