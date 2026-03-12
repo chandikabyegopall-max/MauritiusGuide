@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotels - Mauritius Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden { display: none; }
+    .available { color: green; font-weight: bold; }
+    .booked { color: red; font-weight: bold; }
+    button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #005f87;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Mauritius Guide</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="attractions.html">Attractions</a></li>
+      <li><a href="hotels.html">Hotels</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="activities.html">Activities</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mode toggle -->
+  <div class="mode-toggle">
+    <span id="mode-text">Switch to Dark Mode</span>
+    <img id="mode-switch" src="darkmode.png" alt="Toggle Mode">
+  </div>
+  
+  <!-- Hotel List Section -->
+  <section class="section">
+    <h2>Top Hotels</h2>
+    <div class="cards">
+      <div class="card" onclick="loadHotelAvailability('Lux Belle Mare')">
+        <img src="Lux-bellemare.jpg" alt="Lux Belle Mare" />
+        <h3>Lux Belle Mare</h3>
+        <p>Luxury beach resort with world-class dining and ocean views.</p>
+        <button class="wishlist-btn">♡ Add to Wishlist</button>
+      </div>
+      <div class="card" onclick="loadHotelAvailability('One&Only Le Saint Geran')">
+        <img src="Saint-geran.jpg" alt="One&Only Le Saint Geran" />
+        <h3>One&Only Le Saint Géran</h3>
+        <p>An iconic 5-star resort offering private beaches and fine hospitality.</p>
+        <button class="wishlist-btn">♡ Add to Wishlist</button>
+      </div>
+      <div class="card" onclick="loadHotelAvailability('The Westin Turtle Bay')">
+        <img src="westin-turtle.jpg" alt="The Westin Turtle Bay" />
+        <h3>The Westin Turtle Bay</h3>
+        <p>Elegant rooms, spa treatments, and views of Turtle Bay.</p>
+        <button class="wishlist-btn">♡ Add to Wishlist</button>
+      </div>
+      <div class="card" onclick="loadHotelAvailability('Shangri-La Le Touessrok')">
+        <img src="shangri-la.jpg" alt="Shangri-La Le Touessrok"/>
+        <h3>Shangri-La Le Touessrok</h3>
+        <p>Exclusive resort with private islands, golf course and fine dining.</p>
+        <button class="wishlist-btn">♡ Add to Wishlist</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Availability Screen -->
+  <section id="availabilityScreen" class="hidden">
+    <h2 id="hotelTitle"></h2>
+    <img id="hotelImage" src="" alt="Hotel photo" style="max-width:100%; border-radius:8px; margin:20px 0;">
+    <p id="hotelDescription"></p>
+    <div id="availabilityTable"></div>
+    <button onclick="goBack()">← Back to Hotels</button>
+  </section>
+
+  <!-- Wishlist UI -->
+  <div id="wishlistToggle" class="wishlist-toggle" title="Open Wishlist">💙 Wishlist</div>
+  <aside id="wishlistSidebar" class="wishlist-sidebar hidden" aria-hidden="true">
+    <header class="wishlist-header">
+      <h3>Your Wishlist</h3>
+      <button id="closeWishlist" class="close-wishlist" aria-label="Close wishlist">Close</button>
+    </header>
+    <ul id="wishlistItems"></ul>
+    <div id="wishlistEmpty" class="wishlist-empty">Your wishlist is empty.</div>
+  </aside>
+  
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="attractions-ajax.js"></script>
+  <script src="wishlist.js"></script>
+  <script src="app-wishlist.js"></script>
+  <script src="darkmode.js"></script>
+
+  <script>
+    function goBack() {
+      document.getElementById("availabilityScreen").classList.add("hidden");
+      document.querySelector(".section").style.display = "block";
+      setBackgroundImage("images/default-mauritius.jpg");
+    }
+
+    function loadHotelAvailability(hotelName) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "hotelService.php", true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var parser = new DOMParser();
+          var xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+          var hotels = xmlDoc.getElementsByTagName("hotel");
+
+          for (var i = 0; i < hotels.length; i++) {
+            var name = hotels[i].getElementsByTagName("name")[0].textContent.trim();
+            var normalizedName = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            var normalizedClick = hotelName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            if (normalizedName === normalizedClick) {
+              var description = hotels[i].getElementsByTagName("description")[0].textContent;
+              var rooms = hotels[i].getElementsByTagName("room");
+
+              document.getElementById("hotelTitle").textContent = name;
+              document.getElementById("hotelDescription").textContent = description;
+
+              let imageMap = {
+                "lux belle mare": "images/Lux-bellemare.jpg",
+                "one&only le saint geran": "images/Saint-geran.jpg",
+                "the westin turtle bay": "images/westin-turtle.jpg",
+                "shangri-la le touessrok": "images/shangri-la.jpg"
+              };
+              document.getElementById("hotelImage").src = imageMap[normalizedClick];
+
+              var output = "<table><tr><th>Room</th><th>Price</th><th>Status</th><th>Action</th></tr>";
+              for (var j = 0; j < rooms.length; j++) {
+                var type = rooms[j].getAttribute("type");
+                var price = "Rs " + rooms[j].getAttribute("price");
+                var status = rooms[j].getAttribute("status");
+                var statusClass = (status === "Available") ? "available" : "booked";
+
+                output += "<tr>";
+                output += "<td>" + type + "</td>";
+                output += "<td>" + price + "</td>";
+                output += "<td class='" + statusClass + "'>" + status + "</td>";
+
+                if (status === "Available") {
+                  let bookingLinks = {
+                    "lux belle mare": "https://www.luxresorts.com/en/mauritius/hotel/luxbellemare",
+                    "one&only le saint geran": "https://www.oneandonlyresorts.com/le-saint-geran",
+                    "the westin turtle bay": "https://www.marriott.com/en-us/hotels/mrutb-the-westin-turtle-bay-resort-and-spa-mauritius/overview/?msockid=1b2f454fc600614c0bbc57a8c70060a3",
+                    "shangri-la le touessrok": "https://www.shangri-la.com/mauritius/shangrila/"
+                  };
+                  output += "<td><a href='" + bookingLinks[normalizedClick] + "' target='_blank'><button>Book</button></a></td>";
+                } else {
+                  output += "<td>-</td>";
+                }
+
+                output += "</tr>";
+              }
+              output += "</table>";
+
+              document.getElementById("availabilityTable").innerHTML = output;
+              document.querySelector(".section").style.display = "none";
+              document.getElementById("availabilityScreen").classList.remove("hidden");
+            }
+          }
+        }
+      };
+      xhr.send();
+    }
+  </script>
+
+  <div id="bgOverlay"></div>
+</body>
+</html>
+
+
