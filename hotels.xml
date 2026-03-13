@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hotels.xsd">
+    <hotel id="H1">
+        <name>Lux Belle Mare</name>
+        <description>Luxury beach resort with world-class dining and ocean views.</description>
+        <rooms>
+            <room id="R1" type="Deluxe Suite" price="25000" status="Booked"/>
+            <room id="R2" type="Ocean View Suite" price="35000" status="Available"/>
+            <room id="R3" type="Family Villa" price="50000" status="Available"/>
+        </rooms>
+    </hotel>
+
+    <hotel id="H2">
+        <name>One&amp;Only Le Saint Geran</name>
+        <description>An iconic 5-star resort offering private beaches and fine hospitality.</description>
+        <rooms>
+            <room id="R4" type="Ocean Villa" price="40000" status="Booked"/>
+            <room id="R5" type="Garden Villa" price="32000" status="Available"/>
+            <room id="R6" type="Presidential Suite" price="80000" status="Booked"/>
+        </rooms>
+    </hotel>
+
+    <hotel id="H3">
+        <name>The Westin Turtle Bay</name>
+        <description>Elegant rooms, spa treatments and views of Turtle Bay.</description>
+        <rooms>
+            <room id="R7" type="Garden View Room" price="30000" status="Booked"/>
+            <room id="R8" type="Beachfront Room" price="28000" status="Available"/>
+            <room id="R9" type="Luxury Spa Suite" price="45000" status="Available"/>
+        </rooms>
+    </hotel>
+
+    <hotel id="H4">
+        <name>Shangri-La Le Touessrok</name>
+        <description>Exclusive resort with private islands, golf course, and fine dining.</description>
+        <rooms>
+            <room id="R10" type="Coral Deluxe Room" price="27000" status="Booked"/>
+            <room id="R11" type="Island Villa" price="60000" status="Available"/>
+            <room id="R12" type="Royal Suite" price="95000" status="Booked"/>
+        </rooms>
+    </hotel>
+</hotels>
